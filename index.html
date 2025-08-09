@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egon's Services Selector</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e0e0e0;
+            --secondary-color: #00ffff; /* Cyan */
+            --background-color: #0a0a1a; /* Deep blue */
+            --surface-color: rgba(10, 10, 30, 0.7);
+            --glow-color: rgba(0, 255, 255, 0.5);
+            --border-color: rgba(0, 255, 255, 0.2);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 20%, var(--glow-color), transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(128, 0, 128, 0.3), transparent 30%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 40px #fff;
+            margin-bottom: 4rem;
+            letter-spacing: 0.1em;
+        }
+
+        .selector-grid {
+            display: flex;
+            gap: 2.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 2rem;
+            width: 300px;
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 25px var(--glow-color), 0 0 40px rgba(0,0,0,0.7);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-shadow: 0 0 15px var(--glow-color);
+        }
+
+        .card h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.75rem;
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .selector-grid {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            .card {
+                width: 80vw;
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>EGON.SERVICES</h1>
+        <div class="selector-grid">
+            <a href="https://games.egon.services" class="card" target="_blank" rel="noopener noreferrer">
+                <span class="card-icon">🎮</span>
+                <h2>Games</h2>
+                <p>Explore a collection of fun and interactive web-based games.</p>
+            </a>
+            <a href="https://chess.egon.services" class="card" target="_blank" rel="noopener noreferrer">
+                <span class="card-icon">♟️</span>
+                <h2>Chess</h2>
+                <p>Challenge your friends or our AI to a classic game of chess.</p>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
